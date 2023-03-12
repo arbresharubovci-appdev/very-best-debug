@@ -60,9 +60,12 @@
   <% @the_venue.comments.each do |comment| %>
   <tr>
     <td>
+      <%= comment.commenter %>
+    </td>
+    <td>
       <%= comment.author_id %>
     </td>
-
+    
     <td>
       <%= comment.body %>
     </td>
