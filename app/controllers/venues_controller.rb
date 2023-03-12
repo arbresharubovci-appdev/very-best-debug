@@ -1,8 +1,9 @@
 class VenuesController < ApplicationController
 
   def index
-    matching_venues = venues_url
-    venues = matching_venues.ord
+    matching_venues = Venue.all
+    @venues = matching_venues
+    
 
     render({ :template => "venue_templates/venue_list.html.erb" })
   end
@@ -48,15 +49,5 @@ class VenuesController < ApplicationController
 
     redirect_to("/venues")
   end
-
-  # def delete
-  #   #Parameters: {"for_delete"=>" 777"}
-  #   the_id = params.fetch("for_delete")
-  #   matching_photos = Photo.where({ :id => the_id})
-  #   the_photo = matching_photos.at(0)
-  #   the_photo.destroy
-  #   #render({ :template => "photo_templates/delete.html.erb"})
-  #   redirect_to("/photos")
-  # end
 
 end
